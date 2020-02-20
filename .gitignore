@@ -18,3 +18,10 @@
 /tenantPOC/obj
 /Tests/bin/Debug/netcoreapp3.1
 /Tests/obj
+/bin/Release
+/Multitenant/bin/Release/netcoreapp3.1
+/Common/bin/Release/netcoreapp3.1
+/Repository/bin/Release/netcoreapp3.1
+/Services/bin/Release/netcoreapp3.1
+/tenantPOC/bin/Release/netcoreapp3.1
+/Tests/bin/Release/netcoreapp3.1

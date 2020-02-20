@@ -4,6 +4,14 @@
         <name>MultitenantAPI</name>
     </assembly>
     <members>
+        <member name="M:MultitenantAPI.Controllers.TestController.#ctor(Multitenant.Business.Classes.TenantAccessService{Multitenant.Common.Tenant},Multitenant.Business.Classes.Example.OperationIdService,Repository.Interfaces.ItestRepository,Microsoft.Extensions.Logging.ILogger{MultitenantAPI.Controllers.TenantController})">
+            <inheritdoc />
+        </member>
+        <member name="T:MultitenantAPI.MiddleWare.ErrorHandlerMiddleware">
+            <summary>
+            Middleware to catch the application exceptions and Send the response to the frontend
+            </summary>
+        </member>
         <member name="M:tenantPOC.Program.CreateHostBuilder(System.String[])">
             <summary>
             

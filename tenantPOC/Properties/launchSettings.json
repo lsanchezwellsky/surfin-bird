@@ -29,12 +29,12 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/weatherforecast",
-      "publishAllPorts": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/",
       "environmentVariables": {
         "LOGS_PATH": "/var/log/",
         "LOGS_FILE_NAME": "tenantPOC"
       },
+      "publishAllPorts": true,
       "useSSL": true
     }
   }
