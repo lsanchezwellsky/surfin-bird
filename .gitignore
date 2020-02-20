@@ -1,0 +1,20 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/bin/Debug
+/.vs
+/Common/bin/Debug/netcoreapp3.1
+/Common/obj
+/Multitenant/bin/Debug/netcoreapp3.1
+/Multitenant/obj
+/obj
+/postgresql/db/wellsky.backup
+/Repository/bin/Debug/netcoreapp3.1
+/Repository/obj
+/Services/bin/Debug/netcoreapp3.1
+/Services/obj
+/tenantPOC/bin/Debug/netcoreapp3.1
+/tenantPOC/obj
+/Tests/bin/Debug/netcoreapp3.1
+/Tests/obj

@@ -1,0 +1,50 @@
+version: '3.5'
+
+services:
+  postgres:
+    networks:
+      multitenant:
+        aliases:
+          - db-server
+    environment:
+      POSTGRES_DB: wellsky
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    build:
+       context: ./postgresql
+       dockerfile: ./postgres.Dockerfile
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5998:5432"
+    restart: always
+  multitenantapi:
+    image: ${DOCKER_REGISTRY-}multitenantapi
+    networks:
+      multitenant:
+        aliases:
+          - api-server
+    build:
+      context: .
+      dockerfile: tenantPOC/Dockerfile
+    environment:
+      - ASPNETCORE_HTTPS_PORT=44349
+      - ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.AspNetCore.ApplicationInsights.HostingStartup
+      - TENANTS_DB_SERVER=db-server
+      - TENANTS_DB_PORT=5432
+      - TENANTS_DB_USER=postgres
+      - TENANTS_DB_PASSWORD=postgres
+      - TENANTS_DATABASE=wellskyqa
+      - LOGS_PATH=/var/log/
+      - LOGS_FILE_NAME=openreferrals
+    ports:
+      - "51240:80"
+      - "44340:443"  
+
+networks:
+  multitenant:
+    external: false
+    name: multitenant-network
+volumes:
+  postgres-data:
+    name: multitenant-postgres-volume

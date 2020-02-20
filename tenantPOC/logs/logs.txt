@@ -1,0 +1,97 @@
+2020-02-12 18:26:08.086 +00:00 [INF] Starting host
+2020-02-12 18:26:13.243 +00:00 [INF] Now listening on: https://[::]:443
+2020-02-12 18:26:13.249 +00:00 [INF] Now listening on: http://[::]:80
+2020-02-12 18:26:13.251 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-12 18:26:13.252 +00:00 [INF] Hosting environment: Development
+2020-02-12 18:26:13.297 +00:00 [INF] Content root path: /app
+2020-02-12 18:26:14.607 +00:00 [INF] HTTP GET /weatherforecast responded 200 in 205.767183 ms
+2020-02-12 18:26:14.827 +00:00 [INF] HTTP GET /favicon.ico responded 404 in 19.944273 ms
+2020-02-12 18:26:23.767 +00:00 [INF] HTTP GET /index.html responded 200 in 29.101752 ms
+2020-02-12 18:26:24.116 +00:00 [INF] HTTP GET /favicon-32x32.png responded 200 in 9.403481 ms
+2020-02-12 18:26:24.240 +00:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 168.115555 ms
+2020-02-12 18:26:32.825 +00:00 [INF] Entity Framework Core 3.1.1 initialized 'Sp5DbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=Database1 
+2020-02-12 18:26:33.003 +00:00 [INF] HTTP GET /api/Tenant/GetRecordsByTenant responded 200 in 666.735613 ms
+2020-02-12 18:27:38.024 +00:00 [INF] Entity Framework Core 3.1.1 initialized 'Sp5DbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=Database2 
+2020-02-12 18:27:38.029 +00:00 [INF] HTTP GET /api/Tenant/GetRecordsByTenant responded 200 in 39.186635 ms
+2020-02-12 18:32:56.770 +00:00 [INF] Starting host
+2020-02-12 18:33:01.355 +00:00 [INF] Now listening on: https://[::]:443
+2020-02-12 18:33:01.387 +00:00 [INF] Now listening on: http://[::]:80
+2020-02-12 18:33:01.389 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-12 18:33:01.391 +00:00 [INF] Hosting environment: Development
+2020-02-12 18:33:01.392 +00:00 [INF] Content root path: /app
+2020-02-12 18:33:02.680 +00:00 [INF] HTTP GET /weatherforecast responded 200 in 163.589286 ms
+2020-02-12 18:33:11.866 +00:00 [INF] Accessed Tenant Controller
+2020-02-12 18:33:12.238 +00:00 [INF] Entity Framework Core 3.1.1 initialized 'Sp5DbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=Database2 
+2020-02-12 18:33:12.380 +00:00 [WRN] 0 retrieved
+2020-02-12 18:33:12.407 +00:00 [INF] HTTP GET /api/Tenant/GetRecordsByTenant responded 200 in 678.407387 ms
+2020-02-12 18:33:38.773 +00:00 [INF] Accessed Tenant Controller
+2020-02-12 18:33:38.853 +00:00 [INF] Entity Framework Core 3.1.1 initialized 'Sp5DbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=Database1 
+2020-02-12 18:33:38.952 +00:00 [INF] Saved 1 entities to in-memory store.
+2020-02-12 18:33:38.959 +00:00 [INF] record added
+2020-02-12 18:33:38.962 +00:00 [INF] HTTP GET /api/Tenant/AddTenantRecord?id=1&name=record1 responded 200 in 218.632106 ms
+2020-02-12 18:42:46.637 +00:00 [INF] Starting host
+2020-02-12 18:42:51.561 +00:00 [INF] Now listening on: https://[::]:443
+2020-02-12 18:42:51.616 +00:00 [INF] Now listening on: http://[::]:80
+2020-02-12 18:42:51.618 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-12 18:42:51.619 +00:00 [INF] Hosting environment: Development
+2020-02-12 18:42:51.620 +00:00 [INF] Content root path: /app
+2020-02-12 18:42:53.623 +00:00 [INF] HTTP GET /weatherforecast responded 200 in 157.913145 ms
+2020-02-12 18:42:58.146 +00:00 [INF] Accessed Tenant Controller
+2020-02-12 18:42:58.573 +00:00 [INF] Entity Framework Core 3.1.1 initialized 'Sp5DbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=Database1 
+2020-02-12 18:42:58.676 +00:00 [INF] Saved 1 entities to in-memory store.
+2020-02-12 18:42:58.683 +00:00 [INF] record added
+2020-02-12 18:42:58.686 +00:00 [INF] HTTP GET /api/Tenant/AddTenantRecord?id=1&name=record1 responded 200 in 694.079401 ms
+2020-02-12 18:43:17.460 +00:00 [INF] Accessed Tenant Controller
+2020-02-12 18:43:17.489 +00:00 [INF] Entity Framework Core 3.1.1 initialized 'Sp5DbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=Database1 
+2020-02-12 18:43:17.754 +00:00 [ERR] An exception occurred in the database while saving changes for context type 'tenantPOC.Repository.Sp5DbContext'.
+System.ArgumentException: An item with the same key has already been added. Key: 1
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryTable`1.Create(IUpdateEntry entry)
+   at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryStore.ExecuteTransaction(IList`1 entries, IDiagnosticsLogger`1 updateLogger)
+   at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+System.ArgumentException: An item with the same key has already been added. Key: 1
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryTable`1.Create(IUpdateEntry entry)
+   at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryStore.ExecuteTransaction(IList`1 entries, IDiagnosticsLogger`1 updateLogger)
+   at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2020-02-12 18:43:18.202 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: An item with the same key has already been added. Key: 1
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryTable`1.Create(IUpdateEntry entry)
+   at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryStore.ExecuteTransaction(IList`1 entries, IDiagnosticsLogger`1 updateLogger)
+   at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at tenantPOC.Repository.Classes.MDW.openreferrals.Repository.GenericRepository`1.InsertAsync(T entity) in C:\Users\leonardo.sanchez.ENDAVA\source\repos\tenantPOC\tenantPOC\Repository\Classes\GenericRepository.cs:line 52
+   at tenantPOC.Repository.Classes.TestRepository.addTest(Test test) in C:\Users\leonardo.sanchez.ENDAVA\source\repos\tenantPOC\tenantPOC\Repository\Classes\TestRepository.cs:line 28
+   at tenantPOC.Controllers.TenantController.AddTenantRecord(String id, String name) in C:\Users\leonardo.sanchez.ENDAVA\source\repos\tenantPOC\tenantPOC\Controllers\TenantController.cs:line 51
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-02-12 18:43:18.281 +00:00 [ERR] HTTP GET /api/Tenant/AddTenantRecord?id=1&name=record1 responded 500 in 852.886714 ms
+2020-02-12 18:43:56.826 +00:00 [INF] Accessed Tenant Controller
+2020-02-12 18:43:56.840 +00:00 [INF] Entity Framework Core 3.1.1 initialized 'Sp5DbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=Database1 
+2020-02-12 18:43:56.848 +00:00 [INF] Saved 1 entities to in-memory store.
+2020-02-12 18:43:56.852 +00:00 [INF] record added
+2020-02-12 18:43:56.862 +00:00 [INF] HTTP GET /api/Tenant/AddTenantRecord?id=2&name=record1 responded 200 in 38.957981 ms
