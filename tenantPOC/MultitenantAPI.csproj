@@ -12,6 +12,10 @@
     <DocumentationFile>C:\Users\leonardo.sanchez.ENDAVA\source\repos\tenantPOC\tenantPOC\MultitenantAPI.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\leonardo.sanchez.ENDAVA\Source\Repos\lsanchezwellsky\surfin-bird\tenantPOC\MultitenantAPI.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="MultitenantAPI.xml" />
   </ItemGroup>
