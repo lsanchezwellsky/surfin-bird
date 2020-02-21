@@ -1,6 +1,9 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace odataAPI.Helpers
@@ -28,5 +31,26 @@ namespace odataAPI.Helpers
                 return new ObjectResult(jToken);
             }
         }
+
+        public static async Task PostAsync(string url, string tenantId, object postData)
+        {
+            HttpClientHandler clientHandler = new HttpClientHandler();
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+
+            var client = new HttpClient(clientHandler);
+            var json = JsonConvert.SerializeObject(postData);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            var content = new System.Net.Http.StringContent(json, Encoding.UTF8, "application/json");
+            using (var requestMessage = new HttpRequestMessage(HttpMethod.Post, url))
+            {
+                requestMessage.Headers.Add("x-tenant", tenantId);
+                requestMessage.Content = content;
+                var result = await client.SendAsync(requestMessage);
+            }
+
+            
+        }
+
+     
     }
 }

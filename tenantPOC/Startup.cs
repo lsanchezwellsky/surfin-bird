@@ -62,7 +62,7 @@ namespace tenantPOC
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Description = "Multitenant Api for Hackaton", Title = "Cobra Kai Multitenant API", Version = "v1" });
 
             });
 
@@ -93,7 +93,7 @@ namespace tenantPOC
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Multitenant API V1");
                 c.RoutePrefix = string.Empty;
             });
 

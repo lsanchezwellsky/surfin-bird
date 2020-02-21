@@ -57,9 +57,9 @@ namespace odataAPI
                 c.SwaggerDoc("v1", new Info
                 {
                     Version = "v1",
-                    Title = "OPenreferrals API",
-                    Description = "Mediware Openreferrals API",
-                    TermsOfService = "None"
+                    Title = "Odata API",
+                    Description = "Cobra Kai Team Odata API",
+                    TermsOfService = "Just for use in the Wellsky Hackaton 2020"
 
                 });
             });
@@ -84,7 +84,7 @@ namespace odataAPI
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Openreferrals API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Odata API V1");
                 c.RoutePrefix = Empty;
             });
             var builder = new ODataConventionModelBuilder(app.ApplicationServices);

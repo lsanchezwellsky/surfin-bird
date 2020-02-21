@@ -15,7 +15,14 @@ namespace odataAPI.OperationFilter
 
         public void Apply(Operation operation, OperationFilterContext context)
         {
-
+            operation.Parameters.Add(new NonBodyParameter
+            {
+                Name = "x-tenant",
+                Description = "Id if the tenant",
+                Required = true,
+                Type = "string",
+                In = "header"
+            });
 
             var filterPipeline = context.ApiDescription.ActionDescriptor.FilterDescriptors;
             var isOdata= filterPipeline.Select(filterInfo => filterInfo.Filter).Any(filter => filter is EnableQueryAttribute);

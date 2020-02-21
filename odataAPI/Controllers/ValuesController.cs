@@ -32,11 +32,11 @@ namespace odataAPI.Controllers
 
             var url = "https://api-server:443/api/Test";
             var username = _httpContextAccessor.HttpContext.User.Identity.Name;
-            _httpContextAccessor.HttpContext.Request.Headers.TryGetValue("Tenant", out StringValues tenantValue);
+            _httpContextAccessor.HttpContext.Request.Headers.TryGetValue("x-Tenant", out StringValues tenantValue);
             var tenantId = tenantValue.FirstOrDefault();
 
             //var url = $"{_odataHost}{OdataOrganizationUrl}";
-            var response = await HttpHelper.AsyncCall(url, username, "key1");
+            var response = await HttpHelper.AsyncCall(url, username, tenantId);
             if (response == null) return null;
             var result = JsonConvert.DeserializeObject<ICollection<TestModel>>(response.Value.ToString());
             return new ObjectResult(result);
@@ -51,8 +51,15 @@ namespace odataAPI.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task Post([FromBody] ICollection<TestModel> values)
         {
+            var url = "https://api-server:443/api/Test";
+            _httpContextAccessor.HttpContext.Request.Headers.TryGetValue("x-Tenant", out StringValues tenantValue);
+            var tenantId = tenantValue.FirstOrDefault();
+            foreach (var value in values)
+            {
+                await HttpHelper.PostAsync(url, tenantId, value);
+            }
         }
 
         // PUT api/values/5
