@@ -6,16 +6,18 @@ using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNet.OData.Formatter;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.Net.Http.Headers;
+using odataAPI.MiddleWare;
+using odataAPI.OperationFilter;
+using Serilog;
+using Swashbuckle.AspNetCore.Swagger;
+using static System.String;
 
-
-namespace OdataBusinessQuery
+namespace odataAPI
 {
     public class Startup
     {
@@ -29,6 +31,13 @@ namespace OdataBusinessQuery
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.ConfigureSwaggerGen(options =>
+            {
+                options.IncludeXmlComments(Path.ChangeExtension(Assembly.GetEntryAssembly()?.Location, "xml"));
+                options.OperationFilter<ODataParametersSwaggerDefinition>();
+            });
+
             services.AddOData();
             services.AddMvcCore(options =>
             {
@@ -42,19 +51,16 @@ namespace OdataBusinessQuery
                 }
             });
 
-            services.ConfigureSwaggerGen(options =>
-            {
-                options.IncludeXmlComments(Path.ChangeExtension(Assembly.GetEntryAssembly()?.Location, "xml"));
-                //options.OperationFilter<AuthorizationHeaderParameterOperationFilter>();
-            });
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info
                 {
                     Version = "v1",
-                    Title = "Queryable API",
-                    Description = "Queryable API ",
+                    Title = "OPenreferrals API",
+                    Description = "Mediware Openreferrals API",
+                    TermsOfService = "None"
+
                 });
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -63,21 +69,23 @@ namespace OdataBusinessQuery
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            
+            app.UseSerilogRequestLogging();
+            app.UseMiddleware<ErrorHandlerMiddleware>();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
             else
             {
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "QueryableAPI  V1");
-                c.RoutePrefix = string.Empty;
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Openreferrals API V1");
+                c.RoutePrefix = Empty;
             });
             var builder = new ODataConventionModelBuilder(app.ApplicationServices);
             app.UseMvc(routebuilder =>
@@ -86,7 +94,7 @@ namespace OdataBusinessQuery
                 routebuilder.EnableDependencyInjection();
                 routebuilder.Expand().Select().OrderBy().Filter().MaxTop(null).Count();
             });
-            app.UseMvc();
+      
         }
     }
 }

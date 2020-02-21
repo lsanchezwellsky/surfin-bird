@@ -25,3 +25,7 @@
 /Services/bin/Release/netcoreapp3.1
 /tenantPOC/bin/Release/netcoreapp3.1
 /Tests/bin/Release/netcoreapp3.1
+/odataAPI/bin/Debug/netcoreapp2.1
+/odataAPI/obj
+/OdataBusinessQuesry/bin
+/OdataBusinessQuesry/obj

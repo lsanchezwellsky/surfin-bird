@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>odataAPI</name>
+    </assembly>
+    <members>
+        <member name="T:odataAPI.MiddleWare.ErrorHandlerMiddleware">
+            <summary>
+            Middleware to catch the application exceptions and Send the response to the frontend
+            </summary>
+        </member>
+    </members>
+</doc>

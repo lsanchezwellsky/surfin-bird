@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Multitenant", "Multitenant\
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2469B44C-77C8-4848-AC52-F422FBA1A4AD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OdataBusinessQuery", "OdataBusinessQuesry\OdataBusinessQuery.csproj", "{C511B03E-9389-404D-863A-38DEFB7CAFAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "odataAPI", "odataAPI\odataAPI.csproj", "{6F8BAB47-9408-4EB4-A82B-20862E8158F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,10 +53,10 @@ Global
 		{2469B44C-77C8-4848-AC52-F422FBA1A4AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2469B44C-77C8-4848-AC52-F422FBA1A4AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2469B44C-77C8-4848-AC52-F422FBA1A4AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C511B03E-9389-404D-863A-38DEFB7CAFAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C511B03E-9389-404D-863A-38DEFB7CAFAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C511B03E-9389-404D-863A-38DEFB7CAFAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C511B03E-9389-404D-863A-38DEFB7CAFAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F8BAB47-9408-4EB4-A82B-20862E8158F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8BAB47-9408-4EB4-A82B-20862E8158F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8BAB47-9408-4EB4-A82B-20862E8158F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8BAB47-9408-4EB4-A82B-20862E8158F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

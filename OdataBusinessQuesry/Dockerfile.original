@@ -7,10 +7,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
-COPY ["OdataBusinessQuesry/OdataBusinessQuery.csproj", "OdataBusinessQuesry/"]
+COPY ["OdataBusinessQuesry/OdataBusinessQuery.csproj", "OdataBusinessQuery/"]
 RUN dotnet restore "OdataBusinessQuesry/OdataBusinessQuery.csproj"
 COPY . .
-WORKDIR "/src/OdataBusinessQuesry"
+WORKDIR "/src/OdataBusinessQuery"
 RUN dotnet build "OdataBusinessQuery.csproj" -c Release -o /app/build
 
 FROM build AS publish

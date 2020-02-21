@@ -28,8 +28,9 @@ services:
       context: .
       dockerfile: tenantPOC/Dockerfile
     environment:
-      - ASPNETCORE_HTTPS_PORT=44349
-      - ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.AspNetCore.ApplicationInsights.HostingStartup
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80;https://+:443
+      - ASPNETCORE_HTTPS_PORT=44340
       - TENANTS_DB_SERVER=db-server
       - TENANTS_DB_PORT=5432
       - TENANTS_DB_USER=postgres
@@ -40,7 +41,28 @@ services:
     ports:
       - "51240:80"
       - "44340:443"  
-
+  odataapi:
+    image: ${DOCKER_REGISTRY-}odataapi
+    networks:
+      multitenant:
+        aliases:
+          - odata-server
+    build:
+      context: .
+      dockerfile: odataAPI/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80;https://+:443
+      - TENANTS_DB_SERVER=db-server
+      - TENANTS_DB_PORT=5432
+      - TENANTS_DB_USER=postgres
+      - TENANTS_DB_PASSWORD=postgres
+      - TENANTS_DATABASE=wellskyqa
+      - LOGS_PATH=/var/log/
+      - LOGS_FILE_NAME=openreferrals
+    ports:
+      - "53275:80"
+      - "43389:443"  
 networks:
   multitenant:
     external: false
