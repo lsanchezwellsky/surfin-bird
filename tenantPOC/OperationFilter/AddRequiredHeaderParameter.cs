@@ -18,15 +18,15 @@ namespace tenantPOC.OperationFilter
 
             
 
-            operation.Parameters.Add(new OpenApiParameter
-            {
-                Name = "x-tenant",
-                In = ParameterLocation.Header,
-                Required = false,
-                AllowEmptyValue = true,
+            //operation.Parameters.Add(new OpenApiParameter
+            //{
+            //    Name = "x-tenant",
+            //    In = ParameterLocation.Header,
+            //    Required = false,
+            //    AllowEmptyValue = true,
 
 
-            });
+            //});
         }
     }
 }

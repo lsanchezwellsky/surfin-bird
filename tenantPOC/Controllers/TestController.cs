@@ -27,7 +27,7 @@ namespace MultitenantAPI.Controllers
             _logger = logger;
         }
 
-
+        [ApiExplorerSettings(IgnoreApi = true)]
         // GET: api/Test
         [HttpGet]
         public async Task<IActionResult> Get()
@@ -36,14 +36,14 @@ namespace MultitenantAPI.Controllers
             _logger.LogWarning(records.Count + " retrieved");
             return new ObjectResult(records);
         }
-
+        [ApiExplorerSettings(IgnoreApi = true)]
         // GET: api/Test/5
         [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
         {
             return "value";
         }
-
+        [ApiExplorerSettings(IgnoreApi = true)]
         // POST: api/Test
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] Test test)
@@ -53,13 +53,13 @@ namespace MultitenantAPI.Controllers
             _logger.LogInformation("record added");
             return new ObjectResult("OK");
         }
-
+        [ApiExplorerSettings(IgnoreApi = true)]
         // PUT: api/Test/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
-
+        [ApiExplorerSettings(IgnoreApi = true)]
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(int id)

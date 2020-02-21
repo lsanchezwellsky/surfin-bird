@@ -7,5 +7,6 @@ namespace Repository.Interfaces
     public interface IMultitenantRepository
     {
         Task<ICollection<MultitenantClient>> GetAll();
+        Task Add(MultitenantClient tenant);
     }
 }

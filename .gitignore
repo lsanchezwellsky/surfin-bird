@@ -29,3 +29,5 @@
 /odataAPI/obj
 /OdataBusinessQuesry/bin
 /OdataBusinessQuesry/obj
+/tenantPOC/appdata/netcoreapp3.1
+/odataAPI/bin/Release/netcoreapp2.1

@@ -11,6 +11,10 @@
     <DocumentationFile>C:\Users\leonardo.sanchez.ENDAVA\source\repos\lsanchezwellsky\surfin-bird\odataAPI\odataAPI.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\leonardo.sanchez.ENDAVA\Source\Repos\lsanchezwellsky\surfin-bird\odataAPI\odataAPI.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>

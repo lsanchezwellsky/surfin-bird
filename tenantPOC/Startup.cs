@@ -65,7 +65,7 @@ namespace tenantPOC
                 c.SwaggerDoc("v1", new OpenApiInfo { Description = "Multitenant Api for Hackaton", Title = "Cobra Kai Multitenant API", Version = "v1" });
 
             });
-
+            services.AddScoped<IMultitenantRepository, MultitenantRepository>();
             services.AddDbContext<Sp5DbContext>();
             services.AddDbContext<MultitenantDbContext>(options => options.UseInMemoryDatabase(databaseName: "MultitenantDB"));
 

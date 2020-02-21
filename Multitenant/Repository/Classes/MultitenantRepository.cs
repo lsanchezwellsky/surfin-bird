@@ -19,5 +19,10 @@ namespace Repository.Classes
         {
             return await Query().ToListAsync();
         }
+
+        public async Task Add(MultitenantClient tenant)
+        {
+            await InsertAsync(tenant);
+        }
     }
 }

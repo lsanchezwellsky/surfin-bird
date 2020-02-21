@@ -1,9 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Multitenant.Business.Classes;
-using Multitenant.Business.Classes.Example;
-using Multitenant.Common;
+using Multitenant.Common.Multitenant;
 using Repository.Entities;
 using Repository.Interfaces;
 
@@ -14,37 +12,30 @@ namespace MultitenantAPI.Controllers
     [ApiController]
     public class TenantController : ControllerBase
     {
-
-        private readonly TenantAccessService<Tenant> _tenantService;
-        private readonly OperationIdService _operationIdService;
-        private readonly ItestRepository _testRepository;
         private readonly ILogger<TenantController> _logger;
+        private readonly IMultitenantRepository _multitenantRepository;
 
-        public TenantController(TenantAccessService<Tenant> tenantService, OperationIdService operationIdService, ItestRepository testRepository, ILogger<TenantController> logger)
+        public TenantController(ILogger<TenantController> logger, IMultitenantRepository multitenantRepository)
         {
-            _tenantService = tenantService;
-            _operationIdService = operationIdService;
-            _testRepository = testRepository;
             _logger = logger;
+            _multitenantRepository = multitenantRepository;
             _logger.LogInformation("Accessed Tenant Controller");
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetRecordsByTenant()
+        public async Task<IActionResult> GetCurrentTenants()
         {
             
-            var records = await _testRepository.GetAll();
+            var records = await _multitenantRepository.GetAll();
             _logger.LogWarning(records.Count + " retrieved");
             return new ObjectResult(records);
            
         }
 
-        [HttpGet]
-        public async Task<IActionResult> AddTenantRecord(string id, string name)
+        [HttpPost]
+        public async Task<IActionResult> AddTenantRecord([FromBody] MultitenantClient tenant)
         {
-            
-            var newTest = new Test {Id = int.Parse(id), Name = name};
-            await _testRepository.addTest(newTest);
+            await _multitenantRepository.Add(tenant);
             _logger.LogInformation("record added");
             return new ObjectResult("OK");
         }
